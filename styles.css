@@ -1206,3 +1206,536 @@ a {
         padding-bottom: calc(12px + env(safe-area-inset-bottom));
     }
 }
+
+/* ===== NEW SECTIONS - Mobile First ===== */
+
+/* Enhanced Trust Logos */
+.trust-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.trust-logo-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg-card);
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+}
+
+.trust-logo-item.verified {
+    background: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.3);
+    color: var(--primary);
+}
+
+.trust-icon {
+    font-size: 16px;
+}
+
+/* Live Member Counter */
+.live-counter {
+    position: relative;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.live-pulse {
+    width: 8px;
+    height: 8px;
+    background: #EF4444;
+    border-radius: 50%;
+    animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+    0%, 100% { 
+        opacity: 1; 
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+    50% { 
+        opacity: 0.8;
+        box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+    }
+}
+
+.live-text {
+    font-size: 10px;
+    font-weight: 700;
+    color: #EF4444;
+    letter-spacing: 1px;
+}
+
+/* Video / Discord Preview Section */
+.video-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 50%, var(--bg-dark) 100%);
+}
+
+.video-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.video-placeholder {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.discord-preview {
+    background: #36393F;
+    min-height: 350px;
+}
+
+.discord-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #2F3136;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.discord-logo {
+    font-size: 20px;
+}
+
+.discord-name {
+    font-weight: 700;
+    font-size: 15px;
+    flex: 1;
+}
+
+.discord-live {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.discord-messages {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.discord-msg {
+    display: flex;
+    gap: 12px;
+}
+
+.msg-avatar {
+    width: 40px;
+    height: 40px;
+    background: #5865F2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.msg-avatar.lj {
+    background: linear-gradient(135deg, var(--accent) 0%, #D97706 100%);
+}
+
+.msg-content {
+    flex: 1;
+}
+
+.msg-author {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.verified-badge {
+    background: var(--primary);
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.msg-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.discord-footer {
+    background: rgba(0,0,0,0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.blur-overlay {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.video-caption {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 16px;
+}
+
+/* Today's Pick Teaser */
+.todays-pick-section {
+    padding: 60px 0;
+}
+
+.todays-pick-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(250, 204, 21, 0.15);
+}
+
+.pick-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: linear-gradient(90deg, rgba(250, 204, 21, 0.1) 0%, transparent 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pick-badge {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.pick-time {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.pick-content {
+    position: relative;
+    padding: 30px 20px;
+}
+
+.pick-blur {
+    position: relative;
+}
+
+.pick-preview {
+    filter: blur(6px);
+    user-select: none;
+    pointer-events: none;
+}
+
+.pick-sport {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.pick-matchup {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+}
+
+.pick-details {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.pick-selection {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.pick-confidence {
+    font-size: 14px;
+    font-weight: 600;
+    color: #EF4444;
+}
+
+.pick-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.lock-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.pick-overlay p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.pick-stats {
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.pick-stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Bet Slip Carousel */
+.betslip-carousel {
+    margin-bottom: 48px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px 0;
+}
+
+.betslip-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.betslip-track {
+    display: flex;
+    gap: 16px;
+    padding: 0 20px;
+    scroll-snap-type: x mandatory;
+}
+
+.betslip-card {
+    flex: 0 0 280px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    scroll-snap-align: center;
+    transition: transform 0.2s;
+}
+
+.betslip-card:hover {
+    transform: translateY(-4px);
+}
+
+.betslip-card.parlay {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(250, 204, 21, 0.05) 100%);
+}
+
+.betslip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.betslip-app {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.betslip-status {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 50px;
+}
+
+.betslip-status.won {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--primary);
+}
+
+.betslip-body {
+    padding: 20px 16px;
+}
+
+.betslip-pick {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.betslip-odds {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.betslip-stake {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.betslip-payout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: rgba(34, 197, 94, 0.08);
+    border-top: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.payout-label {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.payout-amount {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.dot.active {
+    background: var(--primary);
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* Mobile adjustments for new sections */
+@media (max-width: 768px) {
+    .trust-logos {
+        gap: 10px;
+    }
+    
+    .trust-logo-item {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .discord-preview {
+        min-height: 300px;
+    }
+    
+    .msg-avatar {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .pick-matchup {
+        font-size: 20px;
+    }
+    
+    .betslip-card {
+        flex: 0 0 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trust-logo-item {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .trust-logo-item span:last-child {
+        display: none;
+    }
+    
+    .trust-icon {
+        font-size: 20px;
+    }
+    
+    .discord-header {
+        padding: 12px;
+    }
+    
+    .discord-messages {
+        padding: 12px;
+    }
+    
+    .todays-pick-card {
+        margin: 0 -8px;
+        border-radius: var(--radius-md);
+    }
+    
+    .betslip-card {
+        flex: 0 0 240px;
+    }
+    
+    .betslip-track {
+        padding: 0 16px;
+    }
+}

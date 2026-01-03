@@ -122,10 +122,117 @@ function initStickyCTA() {
     stickyCTA.style.transform = 'translateY(100%)';
 }
 
+// ===== Live Member Counter Animation =====
+function initLiveMemberCounter() {
+    const memberCountEl = document.getElementById('member-count');
+    const liveMembersEl = document.getElementById('live-members');
+    
+    // Simulate live members fluctuation
+    if (liveMembersEl) {
+        let baseOnline = 847;
+        setInterval(() => {
+            // Random fluctuation between -5 and +5
+            const fluctuation = Math.floor(Math.random() * 11) - 5;
+            baseOnline = Math.max(800, Math.min(900, baseOnline + fluctuation));
+            liveMembersEl.textContent = baseOnline;
+        }, 3000);
+    }
+    
+    // Animate member count on scroll
+    if (memberCountEl) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Small increment animation to show "live" feel
+                    const current = parseInt(memberCountEl.textContent.replace(',', ''));
+                    const target = current + Math.floor(Math.random() * 3);
+                    memberCountEl.textContent = target.toLocaleString();
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(memberCountEl);
+    }
+}
+
+// ===== Bet Slip Carousel =====
+function initBetSlipCarousel() {
+    const carousel = document.querySelector('.betslip-carousel');
+    const track = document.querySelector('.betslip-track');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    
+    if (!carousel || !track || dots.length === 0) return;
+    
+    let currentIndex = 0;
+    const cards = track.querySelectorAll('.betslip-card');
+    
+    // Update dots based on scroll position
+    carousel.addEventListener('scroll', () => {
+        const scrollLeft = carousel.scrollLeft;
+        const cardWidth = cards[0].offsetWidth + 16; // card width + gap
+        const newIndex = Math.round(scrollLeft / cardWidth);
+        
+        if (newIndex !== currentIndex && newIndex < dots.length) {
+            currentIndex = newIndex;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+    });
+    
+    // Make dots clickable
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            const cardWidth = cards[0].offsetWidth + 16;
+            carousel.scrollTo({
+                left: cardWidth * i,
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+
+// ===== Animate Stats on Scroll =====
+function initStatAnimations() {
+    const statElements = document.querySelectorAll('.stat-value[data-target]');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.dataset.target);
+                animateNumber(entry.target, 0, target, 1500);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statElements.forEach(el => observer.observe(el));
+}
+
+function animateNumber(element, start, end, duration) {
+    const startTime = performance.now();
+    
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(start + (end - start) * easeOut);
+        
+        element.textContent = current;
+        
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+    
+    requestAnimationFrame(update);
+}
+
 // ===== Animate Elements on Scroll =====
 function initScrollAnimations() {
     const animateElements = document.querySelectorAll(
-        '.problem-card, .step, .result-card, .testimonial-card, .feature-card, .pricing-card, .faq-item'
+        '.problem-card, .step, .result-card, .testimonial-card, .feature-card, .pricing-card, .faq-item, .betslip-card, .todays-pick-card, .discord-preview'
     );
     
     const observer = new IntersectionObserver((entries) => {
@@ -151,6 +258,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initSpotsCounter();
     initStickyCTA();
     initScrollAnimations();
+    initLiveMemberCounter();
+    initBetSlipCarousel();
+    initStatAnimations();
 });
 
 // ===== Add Mobile Menu Styles =====

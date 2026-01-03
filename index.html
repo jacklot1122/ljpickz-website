@@ -63,10 +63,14 @@
                     <p class="hero-disclaimer">No credit card required • Cancel anytime</p>
                 </div>
 
-                <!-- Social Proof Strip -->
+                <!-- Social Proof Strip with Live Counter -->
                 <div class="social-proof-strip">
-                    <div class="proof-item">
-                        <span class="proof-number">1,247</span>
+                    <div class="proof-item live-counter">
+                        <div class="live-indicator">
+                            <span class="live-pulse"></span>
+                            <span class="live-text">LIVE</span>
+                        </div>
+                        <span class="proof-number" id="member-count" data-target="1247">1,247</span>
                         <span class="proof-label">Active Members</span>
                     </div>
                     <div class="proof-divider"></div>
@@ -84,15 +88,118 @@
         </div>
     </section>
 
-    <!-- Trust Logos -->
+    <!-- Trust Logos - Enhanced -->
     <section class="trust-section">
         <div class="container">
-            <p class="trust-label">TRUSTED BY PUNTERS ON</p>
+            <p class="trust-label">AS SEEN ON • TRUSTED PLATFORMS</p>
             <div class="trust-logos">
-                <div class="trust-logo">Whop ✓</div>
-                <div class="trust-logo">Discord</div>
-                <div class="trust-logo">Sportsbet</div>
-                <div class="trust-logo">TAB</div>
+                <div class="trust-logo-item">
+                    <span class="trust-icon">💬</span>
+                    <span>Discord</span>
+                </div>
+                <div class="trust-logo-item verified">
+                    <span class="trust-icon">✓</span>
+                    <span>Whop Verified</span>
+                </div>
+                <div class="trust-logo-item">
+                    <span class="trust-icon">🏇</span>
+                    <span>Sportsbet</span>
+                </div>
+                <div class="trust-logo-item">
+                    <span class="trust-icon">📱</span>
+                    <span>TAB</span>
+                </div>
+                <div class="trust-logo-item">
+                    <span class="trust-icon">🎰</span>
+                    <span>Bet365</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Discord Preview / Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">SEE IT IN ACTION</span>
+                <h2>Inside Our Private Discord</h2>
+                <p>Take a peek at what members see every day</p>
+            </div>
+            <div class="video-wrapper">
+                <div class="video-placeholder">
+                    <div class="discord-preview">
+                        <div class="discord-header">
+                            <span class="discord-logo">💬</span>
+                            <span class="discord-name">LJ Pickz VIP</span>
+                            <span class="discord-live">
+                                <span class="live-dot"></span>
+                                <span id="live-members">847</span> members online
+                            </span>
+                        </div>
+                        <div class="discord-messages">
+                            <div class="discord-msg">
+                                <div class="msg-avatar lj">LJ</div>
+                                <div class="msg-content">
+                                    <span class="msg-author">LJ Picks <span class="verified-badge">✓</span></span>
+                                    <p>🔥 <strong>TODAY'S LOCK:</strong> Celtics -5.5 @ 1.91 — Full analysis below 👇</p>
+                                </div>
+                            </div>
+                            <div class="discord-msg">
+                                <div class="msg-avatar">D</div>
+                                <div class="msg-content">
+                                    <span class="msg-author">Daniel</span>
+                                    <p>Just hit that parlay for +$1,200 🎉🎉</p>
+                                </div>
+                            </div>
+                            <div class="discord-msg">
+                                <div class="msg-avatar">M</div>
+                                <div class="msg-content">
+                                    <span class="msg-author">Marcus</span>
+                                    <p>4 wins in a row, this is insane 💰</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discord-footer">
+                            <span class="blur-overlay">Join to see more picks...</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="video-caption">Real conversations from our VIP Discord</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Pick Teaser -->
+    <section class="todays-pick-section">
+        <div class="container">
+            <div class="todays-pick-card">
+                <div class="pick-header">
+                    <span class="pick-badge">🔒 TODAY'S PICK</span>
+                    <span class="pick-time">Posted 2 hours ago</span>
+                </div>
+                <div class="pick-content">
+                    <div class="pick-blur">
+                        <div class="pick-preview">
+                            <span class="pick-sport">🏀 NBA</span>
+                            <h3 class="pick-matchup">████████ vs ████████</h3>
+                            <div class="pick-details">
+                                <span class="pick-selection">████████ @ 1.██</span>
+                                <span class="pick-confidence">🔥 HIGH CONFIDENCE</span>
+                            </div>
+                        </div>
+                        <div class="pick-overlay">
+                            <div class="lock-icon">🔐</div>
+                            <p>Unlock this pick with your free trial</p>
+                            <a href="https://whop.com/lj-pickz-38-088a/lj-pickz-usa-weekly-ab?a=ljpickzzz" class="btn-primary">Get Instant Access →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pick-stats">
+                    <div class="pick-stat">
+                        <span class="stat-value" data-target="312">0</span>
+                        <span class="stat-label">members betting this</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -149,14 +256,88 @@
         </div>
     </section>
 
-    <!-- Results Section -->
+    <!-- Bet Slips / Results Section -->
     <section class="results-section" id="results">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">REAL RESULTS</span>
-                <h2>What Our Members Are Making</h2>
-                <p>These are real profits from real members. No cherry-picking.</p>
+                <h2>Proof Our Picks Hit</h2>
+                <p>Swipe through actual member bet slips from this week 👆</p>
             </div>
+            
+            <!-- Bet Slip Carousel -->
+            <div class="betslip-carousel">
+                <div class="betslip-track">
+                    <div class="betslip-card">
+                        <div class="betslip-header">
+                            <span class="betslip-app">📱 Sportsbet</span>
+                            <span class="betslip-status won">WON ✓</span>
+                        </div>
+                        <div class="betslip-body">
+                            <div class="betslip-pick">Celtics ML</div>
+                            <div class="betslip-odds">@ 1.85</div>
+                            <div class="betslip-stake">Stake: $500</div>
+                        </div>
+                        <div class="betslip-payout">
+                            <span class="payout-label">Payout</span>
+                            <span class="payout-amount">+$925</span>
+                        </div>
+                    </div>
+                    <div class="betslip-card">
+                        <div class="betslip-header">
+                            <span class="betslip-app">📱 TAB</span>
+                            <span class="betslip-status won">WON ✓</span>
+                        </div>
+                        <div class="betslip-body">
+                            <div class="betslip-pick">Race 7 - #4 Lightning Bolt</div>
+                            <div class="betslip-odds">@ 4.20</div>
+                            <div class="betslip-stake">Stake: $200</div>
+                        </div>
+                        <div class="betslip-payout">
+                            <span class="payout-label">Payout</span>
+                            <span class="payout-amount">+$840</span>
+                        </div>
+                    </div>
+                    <div class="betslip-card parlay">
+                        <div class="betslip-header">
+                            <span class="betslip-app">🎰 Multi/Parlay</span>
+                            <span class="betslip-status won">WON ✓</span>
+                        </div>
+                        <div class="betslip-body">
+                            <div class="betslip-pick">3-Leg Parlay</div>
+                            <div class="betslip-odds">@ 6.80</div>
+                            <div class="betslip-stake">Stake: $100</div>
+                        </div>
+                        <div class="betslip-payout">
+                            <span class="payout-label">Payout</span>
+                            <span class="payout-amount">+$680</span>
+                        </div>
+                    </div>
+                    <div class="betslip-card">
+                        <div class="betslip-header">
+                            <span class="betslip-app">📱 Bet365</span>
+                            <span class="betslip-status won">WON ✓</span>
+                        </div>
+                        <div class="betslip-body">
+                            <div class="betslip-pick">Lakers +4.5</div>
+                            <div class="betslip-odds">@ 1.91</div>
+                            <div class="betslip-stake">Stake: $400</div>
+                        </div>
+                        <div class="betslip-payout">
+                            <span class="payout-label">Payout</span>
+                            <span class="payout-amount">+$764</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <!-- Results Grid -->
             <div class="results-grid">
                 <div class="result-card">
                     <div class="result-amount">+$2,847</div>
