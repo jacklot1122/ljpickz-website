@@ -1,0 +1,24 @@
+{
+  "name": "ljpickz-website",
+  "version": "1.0.0",
+  "description": "LJ Pickz - #1 Data-Driven Sports Investing Group Landing Page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "sports",
+    "betting",
+    "picks",
+    "landing-page"
+  ],
+  "author": "LJ Pickz",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
