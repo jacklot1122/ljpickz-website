@@ -806,6 +806,22 @@ a {
         padding: 14px 20px;
         min-width: 80px;
     }
+    
+    .discord-mockup {
+        margin: 0 -16px;
+    }
+    
+    .discord-sidebar {
+        display: none;
+    }
+    
+    .betslips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ===== Safe Areas for Notched Phones ===== */
@@ -814,3 +830,361 @@ a {
         padding-bottom: calc(12px + env(safe-area-inset-bottom));
     }
 }
+
+/* ===== Discord Preview Section ===== */
+.preview-section {
+    padding: 60px 0;
+    background: var(--bg-card);
+}
+
+.discord-mockup {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+}
+
+.discord-window {
+    display: flex;
+    background: #36393F;
+    min-height: 400px;
+}
+
+.discord-sidebar {
+    width: 200px;
+    background: #2F3136;
+    padding: 16px 0;
+    border-right: 1px solid rgba(255,255,255,0.05);
+    flex-shrink: 0;
+}
+
+.discord-server-name {
+    padding: 0 12px 16px;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 12px;
+}
+
+.discord-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.channel {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.channel:hover {
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.03);
+}
+
+.channel.active {
+    color: var(--text-primary);
+    background: rgba(255,255,255,0.06);
+}
+
+.discord-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.discord-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: #36393F;
+}
+
+.channel-name {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.online-count {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.discord-messages {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    gap: 12px;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #5865F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.message-avatar.lj {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.message-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.badge {
+    background: var(--primary);
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.timestamp {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.message-body {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.pick-title {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.pick-card {
+    background: rgba(0,0,0,0.2);
+    border-left: 3px solid var(--primary);
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.pick-match {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.pick-selection {
+    color: var(--success);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.pick-analysis {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ===== Bet Slips Section ===== */
+.betslips-section {
+    padding: 60px 0;
+}
+
+.betslips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.betslip {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.betslip.featured {
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(212, 160, 18, 0.15);
+}
+
+.betslip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.betslip-app {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.betslip-status {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--success);
+    background: rgba(34, 197, 94, 0.15);
+    padding: 4px 10px;
+    border-radius: 50px;
+}
+
+.betslip-body {
+    padding: 20px 16px;
+}
+
+.betslip-pick {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.betslip-details {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.betslip-payout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: rgba(34, 197, 94, 0.08);
+    border-top: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.betslip-payout span:first-child {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.payout-amount {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--success);
+}
+
+.betslips-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* ===== Testimonials Section ===== */
+.testimonials-section {
+    padding: 60px 0;
+    background: var(--bg-card);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.dm-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.dm-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dm-icon {
+    font-size: 16px;
+}
+
+.dm-label {
+    font-size: 13px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.dm-date {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.dm-messages {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dm-bubble {
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 90%;
+}
+
+.dm-bubble.received {
+    background: #36393F;
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+}
+
+.dm-bubble.sent {
+    background: var(--primary);
+    color: #000;
+    border-bottom-right-radius: 4px;
+    align-self: flex-end;
+}
+
+.dm-footer {
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
